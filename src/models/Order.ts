@@ -9,6 +9,7 @@ import { IUser } from "./User";
 export interface IOrder extends Document {
   user: IUser["_id"];
   address: string;
+  items: [{ name: 'string' }];
 }
 
 const orderSchema: Schema = new Schema({
@@ -18,6 +19,10 @@ const orderSchema: Schema = new Schema({
   },
   address: {
     type: String,
+    required: true
+  },
+  items: {
+    type: Schema.Types.Array,
     required: true
   },
   date: {

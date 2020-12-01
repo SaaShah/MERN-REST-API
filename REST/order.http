@@ -1,18 +1,18 @@
 ### Variables
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmM1NWE1YTE2M2IzZjFhMDZiMjhhZTkiLCJpYXQiOjE2MDY3NjkyNDIsImV4cCI6MTYwNzEyOTI0Mn0.WZAbJ3MzUdoRkcvn2ZTfAgPh0xiHQYsw_bKvv422IoA
-@order = {"address":"Test123"}
-@order_update = {"_id":"5fc62dc8e6663c219d23fcef","address":"1-Updated-Test123"}
+@order = {"address":"Test123","items":[{"name":"test"}]}
+@order_update = {"_id":"5fc63786052a452efef9f4c0","address":"1-Updated-Test123","items":[{"name":"test-123"}]}
 
 @userId = 5fc4d2e58acbac146461a05d
 @orderId = 5fc62d28e6663c219d23fcee
 
 ### Create or update user's order
-# POST  http://localhost:5000/api/order
-# x-auth-token: {{token}}
-# content-type: application/json
+POST  http://localhost:5000/api/order
+x-auth-token: {{token}}
+content-type: application/json
 
-# # {{order}}
-# {{order_update}}
+# {{order}}
+{{order_update}}
 
 # Get all orders
 # GET  http://localhost:5000/api/order

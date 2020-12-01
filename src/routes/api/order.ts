@@ -26,12 +26,13 @@ router.post(
         .json({ errors: errors.array() });
     }
 
-    const { _id, address } = req.body;
+    const { _id, address, items } = req.body;
 
     // Build order object based on IOrder
     const orderFields = {
       user: req.userId,
       address,
+      items
     };
 
     try {
