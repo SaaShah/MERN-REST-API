@@ -5,6 +5,7 @@ import { IUser } from "./User";
  * Interface to model the Order Schema for TypeScript.
  * @param user:ref => User._id
  * @param address:string
+ * @param items:array
  */
 export interface IOrder extends Document {
   user: IUser["_id"];
